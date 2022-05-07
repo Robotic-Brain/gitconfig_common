@@ -1,0 +1,22 @@
+[alias]
+	st = status
+	ci = commit
+	co = checkout
+	diffw = diff --word-diff=color --word-diff-regex='.'
+	diffc = diff --cached
+	diffwc = diff --word-diff=color --cached --word-diff-regex='.'
+	graph = log --oneline --decorate --all --graph
+	slog = log --graph --pretty='tformat:%C(yellow)%h%C(reset) %C(bold)%G?%C(reset)%C(cyan)%d%C(reset)%C(green)%C(bold)% GS%C(reset) %aN  %s' --all
+[diff]
+	submodule = log
+[filter "lfs"]
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+[status]
+	submodulesummary = true
+[init]
+	defaultBranch = master
+[include]
+	path = .gitlocal
